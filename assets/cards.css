@@ -1,0 +1,32 @@
+.hero-section {
+    background-color: #f8f9fa;
+    padding: 60px 0;
+}
+
+.parallax-image {
+    background: url('https://via.placeholder.com/1920x600') no-repeat center center fixed;
+    background-size: cover;
+    height: 400px;
+}
+
+.hover-effect .thumbnail {
+    border: none;
+    overflow: hidden;
+}
+
+.hover-effect .hover-thumbnail {
+    margin-bottom: 20px; /* Add space between rows */
+}
+
+.hover-effect .hover-thumbnail:hover {
+    transform: scale(1.1);
+    transition: transform 0.2s;
+}
+
+.lead-magnet {
+    padding: 60px 0;
+}
+
+.footer-area {
+    padding: 20px 0;
+}
