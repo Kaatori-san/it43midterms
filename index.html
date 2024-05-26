@@ -19,78 +19,75 @@
   <title>Wireframe</title>
 </head>
 <body>
-  <header>
     <nav id="navbar" class="navbar fixed-top navbar-expand-lg">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="./"><img src="./assets/img/Logo.png" alt=""></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="./">HOME</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">SHOP</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#contact">CONTACT US</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">ABOUT US</a>
-            </li>
-          </ul>
-        </div>
-        <div id="navIconsGroup" class="d-flex">
-            <!-- login/signup -->
-            <div id='userParent'> 
-                <div class="dropdown">
-                    <a id="navIcons" href="#"><img src="./assets/img/icons/user.png" alt=""></a>
-                    <div id="inputParent" class="parentc">
-                        <div class="container">
-                            <div id="login-section" class="auth-section">
-                                <form class="auth-form" id="login-form" action="homepage.html" method="get">
-                                    <h2>Login</h2>
-                                    <input id="username" type="text" name="username" placeholder="Username" required>
-                                    <input id="password" type="password" name="password" placeholder="Password" required>
-                                    <button type="submit">Login</button>
-                                    <a href="./forgotPassword.html" class="auth-link">Forgot password?</a>
-                                    <a href="./signup.html" class="auth-link">Sign-up</a>
-                                </form>
-                            </div>           
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            
-          <!-- cart -->
-          <div id='userParent'> 
-                <div class="dropdown">
-                    <a id="navIcons" href="./cart.html"><img src="./assets/img/icons/shoppingcart.png" alt=""></a>
-                    <div id="inputParent" class="parentc">
-                        <div class="card">
-                            <div class="row">
-                                <div class="col-md-8 cart">
-                                    <div class="title">
-                                        <div class="row">
-                                            <div class="col"><h4><b>Shopping Cart</b></h4></div>
-                                            <div class="col align-self-center text-right text-muted">3 items</div>
-                                            <a href="./cart.html" style="font-size: 15px; color: #333;">View shopping cart</a>
-                                        </div>
-                                    </div>
-                                </div>
+        <div class="container-fluid">
+          <a class="navbar-brand" href="./"><img src="./assets/img/Logo.png" alt=""></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">HOME</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">SHOP</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">ABOUT US</a>
+              </li>
+            </ul>
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <!-- login/signup -->
+                <div id='userParent'> 
+                    <div class="dropdown">
+                        <a id="navIcons" href="#"><img src="./assets/img/icons/user.png" alt=""></a>
+                        <div id="inputParent" class="parentc">
+                            <div class="container">
+                                <div id="login-section" class="auth-section">
+                                    <form class="auth-form" id="login-form" action="homepage.html" method="get">
+                                        <h2>Login</h2>
+                                        <input id="username" type="text" name="username" placeholder="Username" required>
+                                        <input id="password" type="password" name="password" placeholder="Password" required>
+                                        <button type="submit">Login</button>
+                                        <a href="./forgotPassword.html" class="auth-link">Forgot password?</a>
+                                        <a href="./signup.html" class="auth-link">Sign-up</a>
+                                    </form>
+                                </div>           
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-      </div>
-    </nav>
-  </header>
-  
+              </li>
+              <!-- cart -->
+              <li class="nav-item">
+                <div id='userParent'> 
+                  <div class="dropdown">
+                      <a id="navIcons" href="./cart.html"><img src="./assets/img/icons/shoppingcart.png" alt=""></a>
+                      <div id="inputParent" class="parentc">
+                          <div class="card">
+                              <div class="row">
+                                  <div class="col-md-8 cart">
+                                      <div class="title">
+                                          <div class="row">
+                                              <div class="col">
+                                                  <h4><b>Shopping Cart</b></h4>
+                                              </div>
+                                              <div class="col align-self-center text-right text-muted">
+                                                  3 items
+                                              </div>
+                                              <a href="./cart.html" style="font-size: 15px; color: #333;">View shopping cart</a>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              </li>
+      </nav>
   <!-- cards -->
   <main>
         <section class="parallax-image">
