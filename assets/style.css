@@ -19,33 +19,28 @@
     font-weight: 400;
 
     .navbar-brand{
-        margin-left: 300px;
+        margin-left: 15vw;
         color: rgb(0, 0, 0);
         img{
-            margin-right: 10px;
+            margin-right: 2vw;
             width: 130px;
-            height: 80px;
+            height: auto;
         }
     }
 }
 #navbarNav{
-    justify-content: flex-start;
-    display: flex;
-    margin-right: 300px;
-    .nav-item{
-        .nav-link{
-            margin-right: 20px;
-            text-shadow: 0 2px 10px 0 rgba(0,0,0,.2);
-            font: "Montserrat", sans-serif;
-            color: #f3700bc4;
-            font-size: 20px;
-            font-weight: 700;
-            text-decoration: none;
-
-            &:hover{
-                color: #f3700b;
-            }
-        }
+    margin-right: 15vw;
+    height: min-content;
+}
+.nav-link{
+    margin-right: 0.5vw;
+    text-shadow: 0 2px 10px 0 rgba(0,0,0,.2);
+    font: "Montserrat", sans-serif;
+    color: #f3700bc4;
+    font-size: 1.5vh 1.5vw;
+    font-weight: 700;
+    &:hover{
+        color: #f3700b;
     }
 }
 #navIconsGroup{
