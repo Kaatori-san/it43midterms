@@ -21,6 +21,7 @@ label {
 
 input[type="text"],
 input[type="email"],
+input[type="tel"],
 textarea {
     width: 100%;
     padding: 10px;
@@ -62,13 +63,15 @@ button[type="submit"]:hover {
 }
 
 #pre-footer .card {
+    border: none;
+    border-radius: 10px;
     display: inline-block;
     vertical-align: top;
     width: 30%;
     margin: 0 0.5rem;
     background-color: #FFE8C5;
     padding: 1rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
 
 @media (max-width: 768px) {

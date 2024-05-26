@@ -10,6 +10,8 @@
   <link rel="stylesheet" href="./assets/cards.css">
   <link rel="stylesheet" href="./assets/cta.css">
   <link rel="stylesheet" href="./assets/style.css">
+  <link rel="stylesheet" href="./assets/login.css">
+  <link rel="stylesheet" href="./assets/cart.css">
   <!-- font awesome -->
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -18,22 +20,22 @@
 </head>
 <body>
   <header>
-    <nav id="navbar" class="navbar navbar-expand-lg">
+    <nav id="navbar" class="navbar fixed-top navbar-expand-lg">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#"><img src="./assets/img/Logo.png" alt=""></a>
+        <a class="navbar-brand" href="./"><img src="./assets/img/Logo.png" alt=""></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">HOME</a>
+              <a class="nav-link active" aria-current="page" href="./">HOME</a>
             </li>
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="#">SHOP</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">CONTACT US</a>
+              <a class="nav-link active" aria-current="page" href="#contact">CONTACT US</a>
             </li>
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="#">ABOUT US</a>
@@ -41,11 +43,49 @@
           </ul>
         </div>
         <div id="navIconsGroup" class="d-flex">
-          <!-- login/signup -->
-          <a id="navIcons" href="#"><img src="./assets/img/icons/user.png" alt=""></a>
+            <!-- login/signup -->
+            <div id='userParent'> 
+                <div class="dropdown">
+                    <a id="navIcons" href="#"><img src="./assets/img/icons/user.png" alt=""></a>
+                    <div id="inputParent" class="parentc">
+                        <div class="container">
+                            <div id="login-section" class="auth-section">
+                                <form class="auth-form" id="login-form" action="homepage.html" method="get">
+                                    <h2>Login</h2>
+                                    <input id="username" type="text" name="username" placeholder="Username" required>
+                                    <input id="password" type="password" name="password" placeholder="Password" required>
+                                    <button type="submit">Login</button>
+                                    <a href="./forgotPassword.html" class="auth-link">Forgot password?</a>
+                                    <a href="./signup.html" class="auth-link">Sign-up</a>
+                                </form>
+                            </div>           
+                        </div>
+                    </div>
+                </div>
+            </div>
 
+            
           <!-- cart -->
-          <a id="navIcons" href="#"><img src="./assets/img/icons/shoppingcart.png" alt=""></a>
+          <div id='userParent'> 
+                <div class="dropdown">
+                    <a id="navIcons" href="./cart.html"><img src="./assets/img/icons/shoppingcart.png" alt=""></a>
+                    <div id="inputParent" class="parentc">
+                        <div class="card">
+                            <div class="row">
+                                <div class="col-md-8 cart">
+                                    <div class="title">
+                                        <div class="row">
+                                            <div class="col"><h4><b>Shopping Cart</b></h4></div>
+                                            <div class="col align-self-center text-right text-muted">3 items</div>
+                                            <a href="./cart.html" style="font-size: 15px; color: #333;">View shopping cart</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
       </div>
     </nav>
@@ -266,10 +306,8 @@
     </section>
     </main>
 
-        <!-- Navigation Bar -->
-    <!-- Your navigation bar code goes here -->
-
-    <div class="container">
+    <!-- Contact Us -->
+    <div id="contact" class="container">
       <h2>General Inquiry</h2>
       <p>If you have any questions or need further assistance, please contact us using your convenient method. Please refer to each category of Shipping, Returns, Track your order for more details.</p>
       <p><strong>Online Customer Service Hours of Operation:</strong> Monday - Friday: 9:30am - 5pm (GMT+9)</p>
@@ -281,8 +319,8 @@
       
       <hr>
 
-      <h3>Email</h3>
-      <p>Please click to ‘<a href="mailto:info@example.com">E-mail us</a>’ to leave your inquiry to GenThriftZ customer service. Send us details and contact information we will reach you within 48 business hours.</p>
+      <h3>E-mail</h3>
+      <p>Please <a href="mailto:info@example.com">e-mail</a> us to leave your inquiry to GenThriftZ customer service. Send us details and contact information we will reach you within 48 business hours.</p>
       
       <!-- Contact Form -->
       <form action="#" method="post" id="contact-form">
