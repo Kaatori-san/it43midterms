@@ -30,3 +30,11 @@
 .footer-area {
     padding: 20px 0;
 }
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: #cbccbe; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
