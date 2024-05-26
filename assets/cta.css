@@ -34,8 +34,8 @@ textarea {
 }
 
 button[type="submit"] {
-    background-color: #007bff;
-    color: #fff;
+    background-color: #f3700bc4;
+    color: #FFE8C5;
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
@@ -46,40 +46,101 @@ button[type="submit"]:hover {
     background-color: #0056b3;
 }
 
-/* Pre-footer and Footer Styles */
-
+/* Pre-footer */
 #pre-footer {
-    background-color: #f4f4f4;
-    padding: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-.card {
-    flex: 1 1 30%; /* Adjust the percentage to control the card width */
-    margin-bottom: 20px;
-}
-
-.card h3 {
-    margin-bottom: 10px;
-    font-size: 18px;
-}
-
-footer {
-    background-color: #333;
-    color: #fff;
+    padding: 2rem 10%;
+    background-color: #FFE8C5;
+    color: #f3700bc4;
     text-align: center;
-    padding: 20px 0;
 }
 
-footer span {
-    margin: 0 10px;
+#pre-footer h3 {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #f3700bc4;
 }
 
-footer span:first-child {
-    margin-left: 0;
+#pre-footer .card {
+    display: inline-block;
+    vertical-align: top;
+    width: 30%;
+    margin: 0 0.5rem;
+    background-color: #FFE8C5;
+    padding: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
+@media (max-width: 768px) {
+    #pre-footer .card {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+}
+
+/* Footer Section */
+footer {
+    position: relative;
+    width: 100%;
+    height: 320px;
+    background: #FFE8C5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #f3700bc4;
+}
+
+footer p:nth-child(1) {
+    font-size: 30px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+footer p:nth-child(2) {
+    font-size: 17px;
+    width: 500px;
+    text-align: center;
+    line-height: 26px;
+}
+
+.social {
+    display: flex;
+}
+
+.social a {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin: 22px 10px;
+    color: #f3700bc4;
+    text-decoration: none;
+    font-size: 50px;
+}
+
+.end {
+    position: absolute;
+    margin: 0 auto;
+    color: #f3700bc4;
+    bottom: 35px;
+    font-size: 14px;
+}
+
+@media only screen and (max-width: 768px) {
+    footer p:nth-child(2) {
+        width: 80%;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1200px) {
+    footer p:nth-child(2) {
+        width: 70%;
+    }
+}
+
 
 /* Responsive Styles */
 
