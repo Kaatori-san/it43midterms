@@ -1,59 +1,100 @@
-/* css reset */
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    background-color: #FFE8C5;
-}
-
-/* font */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-
 /* navbar */
-#navbar{
+#navbar {
     box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
-    background-color: #FFE8C5;
+    background-color: #ffffff;
     color: rgb(0, 0, 0);
     font-size: 20px;
     font-style: normal;
     font-weight: 400;
-
-    .navbar-brand{
-        margin-left: 15vw;
-        color: rgb(0, 0, 0);
-        img{
-            margin-right: 2vw;
-            width: 130px;
-            height: auto;
-        }
-    }
 }
-#navbarNav{
+
+.navbar-brand {
+    margin-left: 0; /* Move logo to the far left */
+    color: rgb(0, 0, 0);
+}
+
+.navbar-brand img {
+    margin-right: 2vw;
+    width: 130px;
+    height: auto;
+}
+
+#navbarNav {
     margin-right: 15vw;
     height: min-content;
 }
-.nav-link{
+
+.nav-link {
     margin-right: 0.5vw;
     text-shadow: 0 2px 10px 0 rgba(0,0,0,.2);
     font: "Montserrat", sans-serif;
-    color: #f3700bc4;
+    color: #000000c4;
     font-size: 1.5vh 1.5vw;
     font-weight: 700;
-    &:hover{
-        color: #f3700b;
-    }
 }
-#navIconsGroup{
-    margin-right: 300px;
+
+.nav-link:hover {
+    color: #000000;
 }
-#navIcons{
-    margin-right: 10px;
-    width: 50px;
-    height: 50px;
+
+#userParent,
+#cartParent {
+    margin-right: 50px; /* Adjust as needed */
+}
+
+#navIcons {
+    width: 30px; /* Adjust icon size */
+    height: 30px;
     opacity: 0.9;
     display: flex;
-    &:hover{
-        opacity: 1;
-        color: #f3700b;
-    }
+}
+
+#navIcons:hover {
+    opacity: 1;
+    color: #000000;
+}
+
+.thumbnail {
+    position: relative;
+    overflow: hidden;
+}
+
+.thumbnail img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.item-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    box-sizing: border-box; /* Include padding and border in width calculation */
+}
+
+.thumbnail:hover .item-info {
+    opacity: 1;
+}
+
+.item-info .item-name {
+    display: block;
+    font-weight: bold;
+    text-decoration: none;
+    color: #000;
+}
+
+.item-info .item-price {
+    display: block;
+    color: #666;
+    font-size: 14px;
+}
+
+.item-info:hover .item-name {
+    text-decoration: underline;
 }
