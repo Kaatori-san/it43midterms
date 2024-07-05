@@ -116,3 +116,12 @@
 .cart-row:last-child .cart-column {
     border: none;
 }
+button{
+    width: 100%;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}

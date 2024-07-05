@@ -42,11 +42,11 @@ a {
 }
 
 .nav-logo img {
-    width: 50px;
+    width: 100px;
 }
 
 .nav-link img {
-    margin-right: 0.5rem;
+    margin: 10px;
     width: 25px;
     height: 25px;
 }
