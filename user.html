@@ -107,11 +107,11 @@ body {
     <input type="checkbox" id="check">
     <div class="login form">
       <header>Login</header>
-      <form action="#">
-        <input type="text" placeholder="Enter your email">
-        <input type="password" placeholder="Enter your password">
+      <form action="#" onsubmit="return validateLoginForm()">
+        <input type="text" id="login-email" placeholder="Enter your email">
+        <input type="password" id="login-password" placeholder="Enter your password">
         <a href="#">Forgot password?</a>
-        <input type="button" class="button" value="Login" onclick="window.location.href='./index.html'">
+        <input type="submit" class="button" value="Login">
       </form>
       <div class="signup">
         <span class="signup">Don't have an account?
@@ -121,11 +121,11 @@ body {
     </div>
     <div class="registration form">
       <header>Signup</header>
-      <form action="#">
-        <input type="text" placeholder="Enter your email">
-        <input type="password" placeholder="Create a password">
-        <input type="password" placeholder="Confirm your password">
-        <input type="button" class="button" value="Signup">
+      <form action="#" onsubmit="return validateSignupForm()">
+        <input type="text" id="signup-email" placeholder="Enter your email">
+        <input type="password" id="signup-password" placeholder="Create a password">
+        <input type="password" id="signup-confirm-password" placeholder="Confirm your password">
+        <input type="submit" class="button" value="Signup">
       </form>
       <div class="signup">
         <span class="signup">Already have an account?
@@ -134,4 +134,74 @@ body {
       </div>
     </div>
   </div>
+
+  <script>
+    function validateEmail(email) {
+      const re = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+      return re.test(email);
+    }
+
+    function validateLoginForm() {
+      const email = document.getElementById('login-email').value;
+      const password = document.getElementById('login-password').value;
+
+      if (email === '' || password === '') {
+        alert('All fields are required.');
+        return false;
+      }
+
+      if (!validateEmail(email)) {
+        alert('Please enter a valid email address.');
+        return false;
+      }
+
+      // Retrieve user data from localStorage
+      const storedUser = JSON.parse(localStorage.getItem(email));
+
+      if (!storedUser || storedUser.password !== password) {
+        alert('Invalid email or password.');
+        return false;
+      }
+
+      // Successful login
+      alert('Login successful!');
+      window.location.href = "./index.html";
+
+      return true; // Return true if validation passes
+    }
+
+    function validateSignupForm() {
+      const email = document.getElementById('signup-email').value;
+      const password = document.getElementById('signup-password').value;
+      const confirmPassword = document.getElementById('signup-confirm-password').value;
+
+      if (email === '' || password === '' || confirmPassword === '') {
+        alert('All fields are required.');
+        return false;
+      }
+
+      if (!validateEmail(email)) {
+        alert('Please enter a valid email address.');
+        return false;
+      }
+
+      if (password !== confirmPassword) {
+        alert('Passwords do not match.');
+        return false;
+      }
+
+      // Store user data in localStorage
+      const user = {
+        email: email,
+        password: password
+      };
+      localStorage.setItem(email, JSON.stringify(user));
+
+      alert('Signup successful!');
+      document.getElementById('check').checked = false; // Switch back to login form
+
+      return true; // Return true if validation passes
+    }
+  </script>
+</body>
 </html>
