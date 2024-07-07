@@ -112,7 +112,7 @@ section {
 }
 
 .cart-total-title {
-    margin-left: 25vh;
+    margin-left: 13vh;
 }
 
 .cart-total-price {
@@ -151,4 +151,8 @@ a:hover {
     background-repeat: no-repeat;
     background-position-x: 95%;
     background-position-y: center;
+}
+.back-to-menu{
+    margin-top: 5vh;
+    text-decoration:underline
 }
