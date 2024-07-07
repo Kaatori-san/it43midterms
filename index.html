@@ -7,11 +7,11 @@
   <!-- bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <!-- external css -->
+   <link rel="stylesheet" href="./assets/navbar-style.css">
   <link rel="stylesheet" href="./assets/cards.css">
   <link rel="stylesheet" href="./assets/cta.css">
   <link rel="stylesheet" href="./assets/style.css">
   <link rel="stylesheet" href="./assets/login.css">
-  <link rel="stylesheet" href="./assets/cart.css">
   <!-- font awesome -->
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -19,83 +19,30 @@
   <title>Wireframe</title>
 </head>
 <body>
-    <nav id="navbar" class="navbar fixed-top navbar-expand-lg">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="./"><img src="./assets/img/logo/GTZ_LOGOMARK_BLACK_02.png" alt=""></a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">HOME</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">SHOP</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">ABOUT US</a>
-              </li>
+    <header class="header">
+        <nav id="navbar" class="navbar fixed-top">
+            <a href="#" class="nav-logo"><img src="./assets/img/logo/GTZ_LOGOMARK_BLACK_02.png" alt=""></a>
+            <ul class="nav-menu ">
+                <!-- login -->
+                <li class="nav-item">
+                    <a href="./user.html" class="nav-link"><img src="./assets/img/navbar icons/user.png" alt="">
+                    <a href="./cart.html" class="nav-link"><img src="./assets/img/navbar icons/shopping cart.png" alt=""></a>
+                </li>
+                <!-- shopping cart -->
             </ul>
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <!-- login/signup -->
-                <div id='userParent'> 
-                    <div class="dropdown">
-                        <a id="navIcons" href="#"><img src="./assets/img/navbar icons/user.png" alt=""></a>
-                        <div id="inputParent" class="parentc">
-                            <div class="container">
-                                <div id="login-section" class="auth-section">
-                                    <form class="auth-form" id="login-form" action="homepage.html" method="get">
-                                        <h2>Login</h2>
-                                        <input id="username" type="text" name="username" placeholder="Username" required>
-                                        <input id="password" type="password" name="password" placeholder="Password" required>
-                                        <button type="submit">Login</button>
-                                        <a href="./forgotPassword.html" class="auth-link">Forgot password?</a>
-                                        <a href="./signup.html" class="auth-link">Sign-up</a>
-                                    </form>
-                                </div>           
-                            </div>
-                        </div>
-                    </div>
-                </div>
-              </li>
-              <!-- cart -->
-              <li class="nav-item">
-                <div id='userParent'> 
-                  <div class="dropdown">
-                      <a id="navIcons" href="./cart.html"><img src="./assets/img/navbar icons/shopping cart.png" alt=""></a>
-                      <div id="inputParent" class="parentc">
-                          <div class="card">
-                              <div class="row">
-                                  <div class="col-md-8 cart">
-                                      <div class="title">
-                                          <div class="row">
-                                              <div class="col">
-                                                  <h4><b>Shopping Cart</b></h4>
-                                              </div>
-                                              <div class="col align-self-center text-right text-muted">
-                                                  3 items
-                                              </div>
-                                              <a href="./cart.html" style="font-size: 15px; color: #333;">View shopping cart</a>
-                                          </div>
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-              </li>
-      </nav>
-      
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
   <!-- cards -->
   <main>
         <section class="parallax-image">
             <div class="container py-5">
-            <img src= "./assets/img/cards/bg/JM.jpg" class="img-fluid" alt="Parallax Image">      
-        </div>
-    </section>
+            <img src= "./assets/img/cards/bg/JM.jpg" class="img-fluid" alt="Parallax Image">
+        </section>
 
     <section class="hover-effect text-center py-5">
         <div class="container">
@@ -106,6 +53,7 @@
                         <div class="item-info">
                             <span class="item-name">Black Nasa</span><br>
                             <span class="item-price">₱1490.00</span>
+                            <button id="item-button" class="shop-item-btn" type="button" onclick="addToCartAndRedirect(event)">ADD TO CART</button>
                         </div>
                     </div>
                 </div>                
@@ -115,6 +63,7 @@
                         <div class="item-info">
                             <span class="item-name">Hot Cheetos Jacket</span><br>
                             <span class="item-price">₱1000.00</span>
+                            <button id="item-button" class="shop-item-btn" type="button" onclick="addToCartAndRedirect(event)">ADD TO CART</button>
                         </div>
                     </div>
                 </div>
@@ -124,6 +73,7 @@
                         <div class="item-info">
                             <span class="item-name">Jupiter</span><br>
                             <span class="item-price">₱1000.00</span>
+                            <button id="item-button" class="shop-item-btn" type="button" onclick="addToCartAndRedirect(event)">ADD TO CART</button>
                         </div>
                     </div>
                 </div>
@@ -133,6 +83,7 @@
                         <div class="item-info">
                             <span class="item-name">Sport Leather Jacket</span><br>
                             <span class="item-price">₱2000.00</span>
+                            <button id="item-button" class="shop-item-btn" type="button" onclick="addToCartAndRedirect(event)">ADD TO CART</button>
                         </div>
                     </div>
                 </div>
@@ -142,6 +93,7 @@
                         <div class="item-info">
                             <span class="item-name">Plain Red</span><br>
                             <span class="item-price">₱700.00</span>
+                            <button id="item-button" class="shop-item-btn" type="button" onclick="addToCartAndRedirect(event)">ADD TO CART</button>
                         </div>
                     </div>
                 </div>
@@ -151,6 +103,7 @@
                         <div class="item-info">
                             <span class="item-name">Mercedes Jacket</span><br>
                             <span class="item-price">₱1500.00</span>
+                            <button id="item-button" class="shop-item-btn" type="button" onclick="addToCartAndRedirect(event)">ADD TO CART</button>
                         </div>
                     </div>
                 </div>
@@ -196,6 +149,7 @@
                         <div class="item-info">
                             <span class="item-name">Vintage Sweater </span><br>
                             <span class="item-price">₱600.00</span>
+                            <button id="item-button" class="shop-item-btn" type="button" onclick="addToCartAndRedirect(event)">ADD TO CART</button>
                         </div>
                     </div>
                 </div>
@@ -205,6 +159,7 @@
                         <div class="item-info">
                             <span class="item-name">Spraint on Paint</span><br>
                             <span class="item-price">₱700.00</span>
+                            <button id="item-button" class="shop-item-btn" type="button" onclick="addToCartAndRedirect(event)">ADD TO CART</button>
                         </div>
                     </div>
                 </div>
@@ -214,6 +169,7 @@
                         <div class="item-info">
                             <span class="item-name">Stars as your pockets?</span><br>
                             <span class="item-price">₱150.00</span>
+                            <button id="item-button" class="shop-item-btn" type="button" onclick="addToCartAndRedirect(event)">ADD TO CART</button>
                         </div>
                     </div>
                 </div>
@@ -223,6 +179,7 @@
                         <div class="item-info">
                             <span class="item-name">Brown Bear</span><br>
                             <span class="item-price">₱500.00</span>
+                            <button id="item-button" class="shop-item-btn" type="button" onclick="addToCartAndRedirect(event)">ADD TO CART</button>
                         </div>
                     </div>
                 </div>
@@ -232,6 +189,7 @@
                         <div class="item-info">
                             <span class="item-name">Stars on Cap</span><br>
                             <span class="item-price">₱100.00</span>
+                            <button id="item-button" class="shop-item-btn" type="button" onclick="addToCartAndRedirect(event)">ADD TO CART</button>
                         </div>
                     </div>
                 </div>
@@ -241,6 +199,7 @@
                         <div class="item-info">
                             <span class="item-name">Military Wanna-be Shorts</span><br>
                             <span class="item-price">₱600.00</span>
+                            <button id="item-button" class="shop-item-btn" type="button" onclick="addToCartAndRedirect(event)">ADD TO CART</button>
                         </div>
                     </div>
                 </div>
@@ -263,6 +222,7 @@
                         <div class="item-info">
                             <span class="item-name">Two bros walking</span><br>
                             <span class="item-price">₱500.00</span>
+                            <button id="item-button" class="shop-item-btn" type="button" onclick="addToCartAndRedirect(event)">ADD TO CART</button>
                         </div>
                     </div>
                 </div>
@@ -272,6 +232,7 @@
                         <div class="item-info">
                             <span class="item-name">Plain Grainy Jacket</span><br>
                             <span class="item-price">₱750.00</span>
+                            <button id="item-button" class="shop-item-btn" type="button" onclick="addToCartAndRedirect(event)">ADD TO CART</button>
                         </div>
                     </div>
                 </div>
@@ -281,6 +242,7 @@
                         <div class="item-info">
                             <span class="item-name">Wanna-be beggar</span><br>
                             <span class="item-price">₱800.00</span>
+                            <button id="item-button" class="shop-item-btn" type="button" onclick="addToCartAndRedirect(event)">ADD TO CART</button>
                         </div>
                     </div>
                 </div>
@@ -290,6 +252,7 @@
                         <div class="item-info">
                             <span class="item-name">Uncle Fit</span><br>
                             <span class="item-price">₱650.00</span>
+                            <button id="item-button" class="shop-item-btn" type="button" onclick="addToCartAndRedirect(event)">ADD TO CART</button>
                         </div>
                     </div>
                 </div>
@@ -299,6 +262,7 @@
                         <div class="item-info">
                             <span class="item-name">Depressed? Buy this</span><br>
                             <span class="item-price">₱980.00</span>
+                            <button id="item-button" class="shop-item-btn" type="button" onclick="addToCartAndRedirect(event)">ADD TO CART</button>
                         </div>
                     </div>
                 </div>
@@ -308,6 +272,7 @@
                         <div class="item-info">
                             <span class="item-name">Picsart</span><br>
                             <span class="item-price">₱680.00</span>
+                            <button id="item-button" class="shop-item-btn" type="button" onclick="addToCartAndRedirect(event)">ADD TO CART</button>
                         </div>
                     </div>
                 </div>
@@ -353,6 +318,7 @@
                         <div class="item-info">
                             <span class="item-name">Leather Jacket (2)</span><br>
                             <span class="item-price">₱2000.00</span>
+                            <button id="item-button" class="shop-item-btn" type="button" onclick="addToCartAndRedirect(event)">ADD TO CART</button>
                         </div>
                     </div>
                 </div>
@@ -362,6 +328,7 @@
                         <div class="item-info">
                             <span class="item-name">Leather Jacket but crop top</span><br>
                             <span class="item-price">₱1500.00</span>
+                            <button id="item-button" class="shop-item-btn" type="button" onclick="addToCartAndRedirect(event)">ADD TO CART</button>
                         </div>
                     </div>
                 </div>
@@ -371,6 +338,7 @@
                         <div class="item-info">
                             <span class="item-name">KPOP fan? Wear this</span><br>
                             <span class="item-price">₱3000.00</span>
+                            <button id="item-button" class="shop-item-btn" type="button" onclick="addToCartAndRedirect(event)">ADD TO CART</button>
                         </div>
                     </div>
                 </div>
@@ -380,6 +348,7 @@
                         <div class="item-info">
                             <span class="item-name">Bleach Lover</span><br>
                             <span class="item-price">₱550.00</span>
+                            <button id="item-button" class="shop-item-btn" type="button" onclick="addToCartAndRedirect(event)">ADD TO CART</button>
                         </div>
                     </div>
                 </div>
@@ -389,6 +358,7 @@
                         <div class="item-info">
                             <span class="item-name">Russian</span><br>
                             <span class="item-price">₱1800.00</span>
+                            <button id="item-button" class="shop-item-btn" type="button" onclick="addToCartAndRedirect(event)">ADD TO CART</button>
                         </div>
                     </div>
                 </div>
@@ -398,6 +368,7 @@
                         <div class="item-info">
                             <span class="item-name">Kpop Dance Practice fit</span><br>
                             <span class="item-price">₱2000.00</span>
+                            <button id="item-button" class="shop-item-btn" type="button" onclick="addToCartAndRedirect(event)">ADD TO CART</button>
                         </div>
                     </div>
                 </div>
@@ -482,6 +453,13 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        function addToCartAndRedirect(event){
+            addToCartClicked(event);
+            window.location.href = 'cart.html';
+        }
+    </script>
     
     <!-- script -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -489,5 +467,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="./assets/cart.js"></script>
+    <script src="./assets/navbar-script.js"></script>
 </body>
 </html>
