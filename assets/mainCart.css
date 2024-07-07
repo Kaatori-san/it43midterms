@@ -1,117 +1,125 @@
-body{
-    background: #FFE8C5;
+body {
+    background: #ffe8c5;
     min-height: 100vh;
-    vertical-align: middle;
     display: flex;
+    justify-content: center;
+    align-items: center;
     font-family: sans-serif;
     font-size: 0.8rem;
     font-weight: bold;
+    margin: 0;
 }
-.title{
-    margin-bottom: 5vh;
+
+section {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.card{
+
+.card {
     margin: auto;
     max-width: 950px;
-    width: 90%;
+    width: 60%;
     box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border-radius: 1rem;
     border: transparent;
+    transition: width 0.3s ease;
 }
-@media(max-width:767px){
-    .card{
+
+@media(max-width: 767px) {
+    .card {
+        width: 90%;
         margin: 3vh auto;
     }
+
+    .cart {
+        padding: 2vh 3vh;
+    }
+
+    .cart-header {
+        font-size: 1rem;
+    }
+
+    .cart-items .cart-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .cart-price, .cart-quantity, .cart-total-title, .cart-total-price {
+        margin-left: 0;
+        text-align: left;
+    }
+
+    .cart-total-title {
+        margin-top: 2vh;
+        margin-left: 0;
+    }
+
+    .cart-total {
+        font-size: 1.2rem;
+        margin-top: 4vh;
+        text-align: left;
+    }
+
+    .btn {
+        font-size: 0.9rem;
+        margin-top: 2vh;
+        padding: 1.5vh;
+    }
 }
-.cart{
+
+.cart {
     background-color: #fff;
     padding: 4vh 5vh;
-    border-bottom-left-radius: 1rem;
-    border-top-left-radius: 1rem;
+    border-radius: 1rem;
 }
-@media(max-width:767px){
-    .cart{
-        padding: 4vh;
-        border-bottom-left-radius: unset;
-        border-top-right-radius: 1rem;
-    }
+
+.title {
+    margin-bottom: 5vh;
 }
-.summary{
-    background-color: #fff;
-    border-top-right-radius: 1rem;
-    border-bottom-right-radius: 1rem;
-    padding: 4vh;
-    color: rgb(65, 65, 65);
+
+.cart-row {
+    border-bottom: 1px solid #dcdcdc;
+    padding: 1vh 0;
 }
-@media(max-width:767px){
-    .summary{
-    border-top-right-radius: unset;
-    border-bottom-left-radius: 1rem;
-    }
+
+.cart-header {
+    font-size: 1.2rem;
+    font-weight: bold;
 }
-.summary .col-2{
-    padding: 0;
+
+.cart-items .cart-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
 }
-.summary .col-10
-{
-    padding: 0;
-}.row{
-    margin: 0;
-}
-.title b{
+
+.cart-total {
     font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 2vh;
 }
-.main{
-    margin: 0;
-    padding: 2vh 0;
-    width: 100%;
+
+.cart-price {
+    margin-left: 5vh;
 }
-.col-2, .col{
-    padding: 0 1vh;
+
+.cart-quantity {
+    margin-left: 5vh;
 }
-a{
-    padding: 0 1vh;
+
+.cart-total-title {
+    margin-left: 25vh;
 }
-.close{
-    margin-left: auto;
-    font-size: 0.7rem;
+
+.cart-total-price {
+    margin-left: 5vh;
 }
-img{
-    width: 3.5rem;
-}
-.back-to-shop{
-    margin-top: 4.5rem;
-}
-h5{
-    margin-top: 4vh;
-}
-hr{
-    margin-top: 1.25rem;
-}
-form{
-    padding: 2vh 0;
-}
-select{
-    border: 1px solid rgba(0, 0, 0, 0.137);
-    padding: 1.5vh 1vh;
-    margin-bottom: 4vh;
-    outline: none;
-    width: 100%;
-    background-color: rgb(247, 247, 247);
-}
-input{
-    border: 1px solid rgba(0, 0, 0, 0.137);
-    padding: 1vh;
-    margin-bottom: 4vh;
-    outline: none;
-    width: 100%;
-    background-color: rgb(247, 247, 247);
-}
-input:focus::-webkit-input-placeholder
-{
-      color:transparent;
-}
-.btn{
+
+.btn {
     background-color: #000;
     border-color: #000;
     color: white;
@@ -121,26 +129,25 @@ input:focus::-webkit-input-placeholder
     padding: 1vh;
     border-radius: 0;
 }
-.btn:focus{
+
+.btn:focus, .btn:hover {
+    color: white;
     box-shadow: none;
     outline: none;
-    box-shadow: none;
-    color: white;
-    -webkit-box-shadow: none;
-    transition: none; 
+    transition: none;
 }
-.btn:hover{
-    color: white;
+
+a {
+    color: black;
 }
-a{
-    color: black; 
-}
-a:hover{
+
+a:hover {
     color: black;
     text-decoration: none;
 }
- #code{
-    background-image: linear-gradient(to left, rgba(255, 255, 255, 0.253) , rgba(255, 255, 255, 0.185)), url("https://img.icons8.com/small/16/000000/long-arrow-right.png");
+
+#code {
+    background-image: linear-gradient(to left, rgba(255, 255, 255, 0.253), rgba(255, 255, 255, 0.185)), url("https://img.icons8.com/small/16000000/long-arrow-right.png");
     background-repeat: no-repeat;
     background-position-x: 95%;
     background-position-y: center;

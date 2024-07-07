@@ -1,10 +1,10 @@
-if(document.readyState == 'loading'){
+if (document.readyState == 'loading') {
     document.addEventListener('DOMContentLoaded', ready)
-} else{
+} else {
     ready()
 }
 
-function ready(){
+function ready() {
     var removeCartItemButtons = document.getElementsByClassName('btn-remove')
     for (var i = 0; i < removeCartItemButtons.length; i++) {
         var button = removeCartItemButtons[i]
@@ -22,6 +22,8 @@ function ready(){
         button.addEventListener('click', addToCartClicked)
     }
     document.getElementsByClassName('btn-purchase')[0].addEventListener('click', purchaseClicked)
+
+    loadCartItems();
 }
 
 function purchaseClicked() {
@@ -30,10 +32,17 @@ function purchaseClicked() {
     while (cartItems.hasChildNodes()) {
         cartItems.removeChild(cartItems.firstChild)
     }
+    localStorage.removeItem('cartItems');
     updateCartTotal()
 }
+
 function removeCartItem(event) {
     var buttonClicked = event.target
+    var title = buttonClicked.parentElement.parentElement.getElementsByClassName('cart-item-title')[0].innerText;
+    var cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+    cartItems = cartItems.filter(item => item.title !== title);
+    localStorage.setItem('cartItems', JSON.stringify(cartItems));
+
     buttonClicked.parentElement.parentElement.remove()
     updateCartTotal()
 }
@@ -43,10 +52,19 @@ function quantityChanged(event) {
     if (isNaN(input.value) || input.value <= 0) {
         input.value = 1
     }
+
+    var title = input.parentElement.parentElement.getElementsByClassName('cart-item-title')[0].innerText;
+    var cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+    var item = cartItems.find(item => item.title === title);
+    if (item) {
+        item.quantity = input.value;
+        localStorage.setItem('cartItems', JSON.stringify(cartItems));
+    }
+
     updateCartTotal()
 }
 
-function addToCartClicked(event){
+function addToCartClicked(event) {
     var button = event.target
     var shopItem = button.parentElement.parentElement
     var title = shopItem.getElementsByClassName('item-name')[0].innerText
@@ -56,31 +74,43 @@ function addToCartClicked(event){
     updateCartTotal()
 }
 
-function addItemToCart(title, price, imageSrc){
+function addItemToCart(title, price, imageSrc) {
+    var cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+    if (cartItems.find(item => item.title === title)) {
+        alert('This item is already added to the cart');
+        return;
+    }
+
+    cartItems.push({ title, price, imageSrc, quantity: 1 });
+    localStorage.setItem('cartItems', JSON.stringify(cartItems));
+
+    renderCartItem({ title, price, imageSrc, quantity: 1 });
+}
+
+function renderCartItem(item) {
     var cartRow = document.createElement('div')
     cartRow.classList.add('cart-row')
     var cartItems = document.getElementsByClassName('cart-items')[0]
-    var cartItemNames = cartItems.getElementsByClassName('cart-item-title')
-    for (var i = 0; i < cartItemNames.length; i++) {
-        if (cartItemNames[i].innerText == title) {
-            alert('This item is already added to the cart')
-            return
-        }
-    }
     var cartRowContents = `
         <div class="cart-item cart-column">
-            <img class="cart-item-image" src="${imageSrc}" width="100" height="100">
-            <span class="cart-item-title">${title}</span>
+            <img class="cart-item-image" src="${item.imageSrc}" width="100" height="100">
+            <span class="cart-item-title">${item.title}</span>
         </div>
-        <span class="cart-price cart-column">${price}</span>
+        <span class="cart-price cart-column">${item.price}</span>
         <div class="cart-quantity cart-column">
-            <input class="cart-quantity-input" type="number" value="1">
+            <input class="cart-quantity-input" type="number" value="${item.quantity}">
             <button class="btn btn-remove" type="button">REMOVE</button>
         </div>`
     cartRow.innerHTML = cartRowContents
     cartItems.append(cartRow)
     cartRow.getElementsByClassName('btn-remove')[0].addEventListener('click', removeCartItem)
     cartRow.getElementsByClassName('cart-quantity-input')[0].addEventListener('change', quantityChanged)
+}
+
+function loadCartItems() {
+    var cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+    cartItems.forEach(item => renderCartItem(item));
+    updateCartTotal();
 }
 
 function updateCartTotal() {
